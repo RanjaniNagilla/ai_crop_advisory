@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Advisory System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>🌱 AI Crop Advisory</h1>
+            <p>Sustainable Farming & Disease Detection (Powered by Hugging Face - Qwen2.5-VL)</p>
+        </header>
+
+        <form id="cropForm">
+            <div class="form-group">
+                <label>Location & Season</label>
+                <div class="row">
+                    <input type="text" id="location" placeholder="City/Region" required>
+                    <input type="text" id="season" placeholder="Season (e.g. Kharif)" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Soil Details</label>
+                <input type="text" id="soil" placeholder="Soil Type (e.g. Loamy)" required>
+            </div>
+
+            <div class="form-group">
+                <label>Nutrient Levels / Water</label>
+                <div class="row">
+                    <input type="number" id="nitrogen" placeholder="N" title="Nitrogen">
+                    <input type="number" id="phosphorus" placeholder="P" title="Phosphorus">
+                    <input type="number" id="potassium" placeholder="K" title="Potassium">
+                </div>
+                <input type="text" id="water" placeholder="Water Level / Irrigation Status" style="margin-top: 10px;">
+            </div>
+
+            <div class="form-group">
+                <label>Crop Information</label>
+                <input type="text" id="crop" placeholder="Crop Name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Disease Detection (Upload Image)</label>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="imageInput" accept="image/*">
+                    <span class="file-custom">Choose Crop Image...</span>
+                </div>
+            </div>
+
+            <button type="submit">Analyze & Get Advice ✨</button>
+        </form>
+
+        <div id="output" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
